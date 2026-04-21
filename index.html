@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit-App Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <h1>🏋️ Fit-App Pro</h1>
+        
+        <form id="regForm">
+            <div class="input-group">
+                <label>Nazwa użytkownika</label>
+                <input type="text" id="username" placeholder="min. 3 znaki">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="przyklad@domena.pl">
+            </div>
+
+            <div class="input-group">
+                <label>Hasło</label>
+                <input type="password" id="password" placeholder="Litery, cyfry, znak @$!%*">
+            </div>
+
+            <button type="submit">Zarejestruj się</button>
+        </form>
+        <div id="feedback" class="feedback"></div>
+
+        <hr>
+
+        <div class="api-container">
+            <h3>💡 Motywacja z API</h3>
+            <p id="advice-text">Kliknij przycisk, aby pobrać poradę treningową...</p>
+            <button onclick="getAdvice()" id="api-btn">Pobierz poradę</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
