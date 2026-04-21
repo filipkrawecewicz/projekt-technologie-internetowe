@@ -28,9 +28,11 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
         feedback.style.backgroundColor = "#ffebee";
         feedback.style.color = "#c62828";
     } else {
-        feedback.innerHTML = "✅ Rejestracja pomyślna!";
+        feedback.innerHTML = "✅ Rejestracja pomyślna! Witaj w WiseGate.";
         feedback.style.backgroundColor = "#e8f5e9";
         feedback.style.color = "#2e7d32";
+
+        document.querySelector('.api-container').style.display = 'block';
     }
 });
 

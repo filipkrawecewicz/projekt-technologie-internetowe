@@ -82,3 +82,11 @@ hr { border: 0; border-top: 1px solid #eee; margin: 25px 0; }
     background-color: #34a853;
     margin-top: 10px;
 }
+
+.api-container {
+    display: none; /* Ukrywamy sekcję na początku */
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
