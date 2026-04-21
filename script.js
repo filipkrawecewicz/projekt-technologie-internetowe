@@ -17,7 +17,7 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
     if (!emailRegex.test(email)) errors.push("Niepoprawny format e-mail");
 
     // Walidacja Hasła (Regex na 3.5: min 8 znaków, litera, cyfra, znak specjalny)
-    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]{8,}$/;
     if (!passRegex.test(pass)) {
         errors.push("Hasło za słabe (wymagana litera, cyfra i znak specjalny)");
     }
