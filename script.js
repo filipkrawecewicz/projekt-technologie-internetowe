@@ -1,5 +1,4 @@
-// WALIDACJA FORMULARZA (3.0 / 3.5)
-document.getElementById('regForm').addEventListener('submit', function(e) {
+    document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const user = document.getElementById('username').value;
@@ -9,14 +8,14 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
 
     let errors = [];
 
-    // Walidacja długości nazwy
-    if (user.length < 3) errors.push("Użytkownik: min. 3 znaki");
+    // Sprawdzanie długości nazwy
+    if (user.length < 3) errors.push("Nazwa użytkownika powinna mieć co najmniej 3 znaki");
 
-    // Walidacja Email (Regex)
+    // Sprawdzanie formatu e-mail
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) errors.push("Niepoprawny format e-mail");
 
-    // Walidacja Hasła (Regex na 3.5: min 8 znaków, litera, cyfra, znak specjalny)
+    // Sprawdzanie hasła
     const passRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]{8,}$/;
     if (!passRegex.test(pass)) {
         errors.push("Hasło za słabe (wymagana litera, cyfra i znak specjalny)");
@@ -36,8 +35,7 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
     }
 });
 
-// OBSŁUGA API (4.0)
-async function getAdvice() {
+    async function getAdvice() {
     const adviceDisplay = document.getElementById('advice-text');
     const btn = document.getElementById('api-btn');
 
@@ -45,11 +43,10 @@ async function getAdvice() {
         btn.disabled = true;
         btn.innerText = "Ładowanie...";
         
-        // Pobieranie danych z zewnętrznego API
+        // Pobieranie danych z API
         const response = await fetch('https://api.adviceslip.com/advice');
         const data = await response.json();
 
-        // Wyświetlenie porady (slip.advice to pole w tym konkretnym API)
         adviceDisplay.innerText = `"${data.slip.advice}"`;
     } catch (error) {
         adviceDisplay.innerText = "Błąd połączenia z API.";
